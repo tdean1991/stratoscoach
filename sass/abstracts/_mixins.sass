@@ -1,0 +1,18 @@
+@mixin colored-img-bg($url,$rgba)
+    background: linear-gradient($rgba,$rgba), url($url)
+    background-size: cover
+    background-attachment: fixed
+    background-position: center
+    background-repeat: no-repeat
+
+@mixin grad-img-bg($url,$rgba1,$rgba2)
+    background: linear-gradient($rgba1,$rgba2), url($url)
+    background-size: cover
+    background-attachment: fixed
+    background-position: center
+    background-repeat: no-repeat
+
+@mixin bg-shade($rgba)
+    background: linear-gradient($rgba,$rgba)
+
+    

@@ -1,0 +1,32 @@
+.navbar
+    background: $col-green
+
+.max-height
+    min-height: calc(100vh)
+#banner
+    @include colored-img-bg("../img/field-field-line-grass-54567.jpg",rgba(0,0,0,0.5))
+    margin-top: 80px
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%)
+    padding-top: 25vh
+    
+
+#about
+    min-height: 100vh
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url("../img/crossfit-dumbbell-equipment-669578.jpg")
+    margin-top: -120px
+    padding-top: 30vh
+    background-size: 100% 100%
+    background-attachment: fixed
+    background-position: center
+    background-repeat: no-repeat
+
+#contact
+    @include colored-img-bg("../img/asphalt-empty-field-163444.jpg",$col-cyan-trans)
+    min-height: 100vh
+    padding-top: 30vh
+    padding-bottom: 30vh
+    
+#privacy
+    @include colored-img-bg("../img/field-field-line-grass-54567.jpg", $col-dark-trans)
+    
+    
