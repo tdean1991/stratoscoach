@@ -16647,8 +16647,9 @@ ul {
   font-size: 1.5em;
 }
 
-#banner h1 {
-  font-size: 5em;
+#banner ul {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .col-lt-grey {
@@ -16660,16 +16661,19 @@ ul {
   box-shadow: 1px 10px 30px black;
 }
 
+.strat-title {
+  font-size: 5rem;
+}
+
+@media (max-width: 500px) {
+  .strat-title {
+    font-size: 3rem;
+  }
+}
 .about-title {
   position: relative;
   color: #00241b;
   box-shadow: 1px 10px 20px black;
-}
-.about-title h1 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 .about-text {
