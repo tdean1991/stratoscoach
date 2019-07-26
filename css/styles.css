@@ -16654,9 +16654,6 @@ ul {
 
 .col-lt-grey {
   color: #cccccc;
-}
-
-.icon {
   border-radius: 10%;
   box-shadow: 1px 10px 30px black;
 }
@@ -16674,6 +16671,13 @@ ul {
   position: relative;
   color: #00241b;
   box-shadow: 1px 10px 20px black;
+}
+.about-title h1 {
+  font-size: 1em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .about-text {
