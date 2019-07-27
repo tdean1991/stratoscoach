@@ -28,11 +28,16 @@
  $mail->Host = 'smtp.gmail.com';
  $mail->Port = 587;
  $mail->SMTPSecure = 'tls';
+ $mail->STMPAuth = true;
+ $mail->IsSMTP();
+ 
  $mail->isHTML(false);
  $mail->UserName = $email_from;
+ $mail->setFrom($email_from);
  $mail->Password = $password;
  $mail->Subject = $email_subject;
  $mail->Body = $email_body;
+ $mail->SMTPDebug = true;
  if (!$mail->send()) {
      $error = "Mailer Error: " . $mail->ErrorInfo;
      echo '<p id="para">'.$error.'</p>';
