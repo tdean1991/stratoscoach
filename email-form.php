@@ -1,6 +1,6 @@
 <?php
     require 'vendor/autoload.php';
-    :wq!$name = $_POST['name'];
+    $name = $_POST['name'];
     $visitor_email = $_POST['email'];
     $message = $_POST['msg'];
     $phone = $_POST['phone'];  
