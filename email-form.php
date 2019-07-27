@@ -18,7 +18,7 @@
 ?>
 
 <?php 
- $password = "ouesqykfjznywjvc";
+ $password = "4b7c94d485a7577af997c3d3a30b14cc";
  
  $headers = "From $email_from \r\n";
  $headers .= "Reply-To: $visitor_email \r\n";
@@ -26,14 +26,14 @@
  $mail->isSMTP();
  $mail->addAddress('info@stratoscoach.com');
  $mail->addAddress('tdean1991@gmail.com');
- $mail->Host = 'smtp.gmail.com';
+ $mail->Host = 'in-v3.mailjet.com';
  $mail->Port = 587;
  $mail->SMTPSecure = 'tls';
  $mail->STMPAuth = true;
  $mail->IsSMTP();
  
  $mail->isHTML(false);
- $mail->UserName = $email_from;
+ $mail->UserName = "25f36ce81b827089e2ead72417a6db83";
  $mail->setFrom($email_from);
  $mail->Password = $password;
  $mail->Subject = $email_subject;
