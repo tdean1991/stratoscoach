@@ -15,8 +15,9 @@
     message: $message "
 ?>
 
-<?php require 'PHPMailerAutoLoad.php'
- $password = 'vwcbqtmxquzgkcqg';
+<?php 
+ require 'PHPMailerAutoLoad.php';
+ $password = "vwcbqtmxquzgkcqg";
  $to = "info@stratoscoach.com,tdean1991@gmail.com";
  $headers = "From $email_from \r\n";
  $headers .= "Reply-To: $visitor_email \r\n";
