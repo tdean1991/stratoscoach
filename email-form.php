@@ -1,4 +1,7 @@
 <?php
+    defined('BASEPATH') OR exit("No direct script access allowed.");
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\Exception;
     $name = $_POST['name'];
     $visitor_email = $_POST['email'];
     $message = $_POST['msg'];
@@ -16,7 +19,6 @@
 ?>
 
 <?php 
- require 'PHPMailerAutoLoad.php';
  $password = "vwcbqtmxquzgkcqg";
  $to = "info@stratoscoach.com,tdean1991@gmail.com";
  $headers = "From $email_from \r\n";
