@@ -1,12 +1,13 @@
 <?php
-    require 'vendor/autoload.php';
+    require "vendor/autoload.php";
     $name = $_POST['name'];
     $visitor_email = $_POST['email'];
     $message = $_POST['msg'];
     $phone = $_POST['phone'];  
 ?>
 
-<?php
+<?phpls
+
     $email_from = 'stratoscoach2019@gmail.com';
     $email_subject = 'New Form Submission';
     $email_body = "You have received a new message from $name.\n
@@ -17,7 +18,7 @@
 ?>
 
 <?php 
- $password = "vwcbqtmxquzgkcqg";
+ $password = "ouesqykfjznywjvc";
  
  $headers = "From $email_from \r\n";
  $headers .= "Reply-To: $visitor_email \r\n";
@@ -37,7 +38,7 @@
  $mail->Password = $password;
  $mail->Subject = $email_subject;
  $mail->Body = $email_body;
- $mail->SMTPDebug = true;
+ $mail->SMTPDebug = 2;
  if (!$mail->send()) {
      $error = "Mailer Error: " . $mail->ErrorInfo;
      echo '<p id="para">'.$error.'</p>';
