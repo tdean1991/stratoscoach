@@ -6,7 +6,7 @@
     $phone = $_POST['phone'];  
 ?>
 
-<?phpls
+<?php
 
     $email_from = 'stratoscoach2019@gmail.com';
     $email_subject = 'New Form Submission';
