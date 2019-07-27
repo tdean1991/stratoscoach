@@ -132,14 +132,14 @@
                             </h1>
                         </div>
                         <div class="card-body">
-                            <form>
+                            <form id="info-form" action="email-form.php" method="POST">
                                 <div class="my-3 input-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">
                                             <i class="fas fa-user"></i>
                                         </span>
                                     </div>
-                                    <input type="text" id="name" placeholder="Enter your name" class="form-control form-control-lg">
+                                    <input type="text" id="name" name="name" placeholder="Enter your name" class="form-control form-control-lg">
                                     </input>
                                 </div>
 
@@ -149,7 +149,7 @@
                                             <i class="fas fa-envelope"></i>
                                         </span>
                                     </div>
-                                    <input type="email" id="email" placeholder="Enter your email" class="form-control form-control-lg">
+                                    <input type="email" id="email" name="email" placeholder="Enter your email" class="form-control form-control-lg">
                                     </input>
                                 </div>
 
@@ -160,7 +160,7 @@
                                             <i class="fas fa-user"></i>
                                         </span>
                                     </div>
-                                    <input type="tel" id="phone"
+                                    <input type="tel" id="phone" name="phone"
                                     pattern="[0-9]{3}-[0-9]{3}-[0-9}{4}"
                                     placeholder="Enter your phone number" class="form-control form-control-lg">
                                     </input>
@@ -172,10 +172,13 @@
                                             <i class="far fa-sticky-note"></i>
                                         </span>
                                     </div>
-                                    <textarea id="msg" placeholder="Enter your message" class="form-control form-control-lg"></textarea>
+                                    <textarea id="msg" name="msg" placeholder="Enter your message" class="form-control form-control-lg"></textarea>
                                 </div>
 
-                                <button type="submit" class="btn btn-block btn-light btn-large text-uppercase contact-btn">
+                                <button type="submit" 
+                                data-sitekey="6LfyHKAUAAAAAOr9VSGle0JZxoGWW_0HRkCiVyMa"
+                                data-callback="onSubmit"
+                                name="submit" class="g-recaptcha btn btn-block btn-light btn-large text-uppercase contact-btn">
                                     <span class="btn-icon">
                                         <i class="fas fa-hand-point-right"></i> Submit</button>
                                     </span>
@@ -291,10 +294,6 @@
         <img src="img/asphalt-empty-field-163444.jpg" alt="">
 
     -->
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/font-awesome-all.min.js"></script>
-    <script src="js/main.js"></script>
     <footer id="footer">
         <div class="container-fluid">
             <div class="row my-2">
@@ -307,5 +306,15 @@
             </div>
         </div>
     </footer>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/font-awesome-all.min.js"></script>
+    <script src="js/main.js"></script>
+     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+     <script>
+       function onSubmit(token) {
+         document.getElementById("demo-form").submit();
+       }
+     </script> 
   </body>
 </html>
