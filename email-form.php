@@ -1,8 +1,6 @@
 <?php
-    defined('BASEPATH') OR exit("No direct script access allowed.");
-    use PHPMailer\PHPMailer\PHPMailer;
-    use PHPMailer\PHPMailer\Exception;
-    $name = $_POST['name'];
+    require 'vendor/autoload.php';
+    :wq!$name = $_POST['name'];
     $visitor_email = $_POST['email'];
     $message = $_POST['msg'];
     $phone = $_POST['phone'];  
@@ -20,19 +18,21 @@
 
 <?php 
  $password = "vwcbqtmxquzgkcqg";
- $to = "info@stratoscoach.com,tdean1991@gmail.com";
+ 
  $headers = "From $email_from \r\n";
  $headers .= "Reply-To: $visitor_email \r\n";
- $mail = new PHPMailer;
+ $mail = new PHPMailer(true);
  $mail->isSMTP();
+ $mail->addAddress('info@stratoscoach.com');
+ $mail->addAddress('tdean1991@gmail.com');
  $mail->Host = 'smtp.gmail.com';
  $mail->Port = 587;
  $mail->SMTPSecure = 'tls';
+ $mail->isHTML(false);
  $mail->UserName = $email_from;
  $mail->Password = $password;
- $mail->addAddress = $to;
  $mail->Subject = $email_subject;
- $mail->msgHTML = $email_body;
+ $mail->Body = $email_body;
  if (!$mail->send()) {
      $error = "Mailer Error: " . $mail->ErrorInfo;
      echo '<p id="para">'.$error.'</p>';
