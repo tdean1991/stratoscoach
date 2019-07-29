@@ -42,7 +42,7 @@
  $mail->Password = $password;
  $mail->Subject = $email_subject;
  $mail->Body = $email_body;
- $mail->SMTPDebug = 2;
+ //$mail->SMTPDebug = 2;
  if (!$mail->send()) {
      $error = "Mailer Error: " . $mail->ErrorInfo;
      echo '<p id="para">'.$error.'</p>';

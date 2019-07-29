@@ -132,7 +132,7 @@
                             </h1>
                         </div>
                         <div class="card-body">
-                            <form id="info-form" action="email-form.php" method="POST">
+                            <form id="info-form" action="#" method="POST">
                                 <div class="my-3 input-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">
@@ -178,8 +178,8 @@
                                 <!-- data-sitekey="6LfyHKAUAAAAAOr9VSGle0JZxoGWW_0HRkCiVyMa"
                                 class g-recaptcha
                                     data-callback="onSubmit" -->
-                                <button type="submit" 
-                                name="submit" class="btn btn-block btn-light btn-large text-uppercase contact-btn">
+                                <button type="submit" data-callbox="onSubmit" 
+                                name="submit" class="g-recaptcha btn btn-block btn-light btn-large text-uppercase contact-btn">
                                     <span class="btn-icon">
                                         <i class="fas fa-hand-point-right"></i> Submit</button>
                                     </span>
@@ -314,7 +314,7 @@
      <script src="https://www.google.com/recaptcha/api.js" async defer></script>
      <script>
        function onSubmit(token) {
-         document.getElementById("demo-form").submit();
+         document.getElementById("info-form").submit();
        }
      </script> 
   </body>
