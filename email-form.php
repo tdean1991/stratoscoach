@@ -1,9 +1,11 @@
-<?php
-    require "vendor/autoload.php";
+?php
+    require 'vendor/autoload.php';
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\Exception;
     $name = $_POST['name'];
     $visitor_email = $_POST['email'];
     $message = $_POST['msg'];
-    $phone = $_POST['phone'];  
+    $phone = $_POST['phone'];
 ?>
 
 <?php
@@ -17,23 +19,25 @@
     message: $message "
 ?>
 
-<?php 
- $password = "4b7c94d485a7577af997c3d3a30b14cc";
- 
+<?php
+ //$password = "4b7c94d485a7577af997c3d3a30b14cc";
+ $password = "ovxmkpssllgyjszh";
  $headers = "From $email_from \r\n";
  $headers .= "Reply-To: $visitor_email \r\n";
  $mail = new PHPMailer(true);
  $mail->isSMTP();
  $mail->addAddress('info@stratoscoach.com');
- $mail->addAddress('tdean1991@gmail.com');
- $mail->Host = 'in-v3.mailjet.com';
+ $mail->addAddress('stratoscoach2019@gmail.com');
+ $mail->Host = 'smtp.gmail.com';
+ //in-v3.mailjet.com';
  $mail->Port = 587;
  $mail->SMTPSecure = 'tls';
- $mail->STMPAuth = true;
+ $mail->SMTPAuth = true;
  $mail->IsSMTP();
- 
+
  $mail->isHTML(false);
- $mail->UserName = "25f36ce81b827089e2ead72417a6db83";
+ //$mail->UserName = "25f36ce81b827089e2ead72417a6db83";
+ $mail->Username = "stratoscoach2019@gmail.com";
  $mail->setFrom($email_from);
  $mail->Password = $password;
  $mail->Subject = $email_subject;
@@ -46,37 +50,5 @@
      echo '<p id="para">Message sent!</p>';
  }
 
- 
-?>
 
-<?php
-function IsInjected($str)
-{
-    $injections = array('(\n+)',
-           '(\r+)',
-           '(\t+)',
-           '(%0A+)',
-           '(%0D+)',
-           '(%08+)',
-           '(%09+)'
-           );
-               
-    $inject = join('|', $injections);
-    $inject = "/$inject/i";
-    
-    if(preg_match($inject,$str))
-    {
-      return true;
-    }
-    else
-    {
-      return false;
-    }
-}
-
-if(IsInjected($visitor_email))
-{
-    echo "Bad email value!";
-    exit;
-}
 ?>
