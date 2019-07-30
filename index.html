@@ -317,8 +317,8 @@
     <script>
         function onSubmit(token) {
             alert("Form Submitted.");
-            document.getElementById("info-form").submit();
-            
+            var form = document.getElementById("info-form")
+            form.submit();            
         }
     </script>
 
