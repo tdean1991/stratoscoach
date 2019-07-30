@@ -132,7 +132,7 @@
                             </h1>
                         </div>
                         <div class="card-body">
-                            <form id="info-form" action="email-form.php" method="POST">
+                            <form action="" id="info-form" method="POST">
                                 <div class="my-3 input-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">
@@ -312,10 +312,28 @@
     <script src="js/main.js"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script>
+
         function onSubmit(token) {
             //alert("Form Submitted.");
+            var email = $('#email').val();
+            var phone = $('#phone').val();
+            var msg = $("#msg").val();
+            var name = $('#name').val();
+
             var form = document.getElementById("info-form");
-            form.submit();            
+            form.submit();   
+            $.ajax ({
+                type: "POST",
+                url: "email-form.php",
+                data:"name="+ name + 
+                "&email=" + email + 
+                "&msg=" + msg + 
+                "&phone=" + phone
+                ,success: function(data) {
+                    alert("Form submitted.");
+                }
+
+            });         
         }
     </script>
 
