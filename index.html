@@ -178,8 +178,10 @@
                                 <!-- data-sitekey="6LfyHKAUAAAAAOr9VSGle0JZxoGWW_0HRkCiVyMa"
                                 class g-recaptcha
                                     data-callback="onSubmit" -->
-                                <button type="submit" data-callbox="onSubmit" 
-                                name="submit" class="g-recaptcha btn btn-block btn-light btn-large text-uppercase contact-btn">
+                                <button type="submit"  
+                                data-sitekey="6LfyHKAUAAAAAOr9VSGle0JZxoGWW_0HRkCiVyMa"
+                                data-callback="onSubmit"
+                                name="submit" class="g-recaptcha btn-block btn-light btn-large text-uppercase contact-btn">
                                     <span class="btn-icon">
                                         <i class="fas fa-hand-point-right"></i> Submit</button>
                                     </span>
@@ -311,11 +313,12 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/font-awesome-all.min.js"></script>
     <script src="js/main.js"></script>
-     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-     <script>
-       function onSubmit(token) {
-         document.getElementById("info-form").submit();
-       }
-     </script> 
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script>
+        function onSubmit(token) {
+            document.getElementById("info-form").submit();
+        }
+    </script>
+
   </body>
 </html>
